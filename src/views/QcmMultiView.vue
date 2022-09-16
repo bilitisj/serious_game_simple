@@ -64,7 +64,7 @@
     $color-principal: hsla(160, 100%, 37%, 1);
     $color-principal-transp: rgb(218, 251, 240);
 
-    // - - - - - n a v - - - - - 
+    // - - - - - Paramètres P R I N C I P A L - - - - - 
     .nav_jeux {
         background: #f4f7f6;
     }
@@ -81,6 +81,7 @@
 
     // - - - - - f o r m - - - - - 
     .form {
+    display: grid;
     margin: 2rem;
     padding: 1rem;
     background: $color-principal-transp; 
@@ -97,6 +98,8 @@
         }
     }
     &_btn {
+        display: flex;
+        justify-self: center;
         border: none;
         padding:.5rem;
         border-radius: .5rem;
