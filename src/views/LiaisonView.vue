@@ -18,10 +18,37 @@
 </script>
 
 <!-- ------------- S T Y L E ------------- -->
-<style>
+<style scoped lang="scss">
+    // - - - - - Paramètres P R I N C I P A L - - - - - 
     .nav_jeux {
         background: #f4f7f6;
     }
+    nav {
+        width: 100%;
+        font-size: 1rem;
+        text-align: center;
+        margin-top: 2rem;
+        padding: 1rem;
+    }
+
+    nav a.router-link-exact-active {
+        color: var(--color-text);
+    }
+
+    nav a.router-link-exact-active:hover {
+        background-color: transparent;
+    }
+
+    nav a {
+        display: inline-block;
+        padding: 0 1rem;
+        border-left: 1px solid var(--color-border);
+    }
+
+    nav a:first-of-type {
+        border: 0;
+    }
+    
     h2 {
         font-size: 1.5rem;
         margin: 1rem 8rem;

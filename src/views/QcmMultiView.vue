@@ -12,7 +12,7 @@
     <div class="body_game">
         <form action="" class="form" @submit="form_click">
             <p class="form_question">Sélectionner les légumes dans la liste ci-dessous ?</p>
-            <p>(plusieurs réponses possibles)</p>
+            <p class="form_expl">(plusieurs réponses possibles)</p>
             <div class="form_inputs">
                 <input class="form_inputs-one" type="checkbox" value="poivron" name="name"/>
                 <label for="poivron">Poivron</label>
@@ -68,11 +68,36 @@
     .nav_jeux {
         background: #f4f7f6;
     }
+    nav {
+        width: 100%;
+        font-size: 1rem;
+        text-align: center;
+        margin-top: 2rem;
+        padding: 1rem;
+    }
+
+    nav a.router-link-exact-active {
+        color: var(--color-text);
+    }
+
+    nav a.router-link-exact-active:hover {
+        background-color: transparent;
+    }
+
+    nav a {
+        display: inline-block;
+        padding: 0 1rem;
+        border-left: 1px solid var(--color-border);
+    }
+
+    nav a:first-of-type {
+        border: 0;
+    }
+    
     h2 {
         font-size: 1.5rem;
         margin: 1rem 8rem;
     }
-
     // - - - - - B o d y  G a m e - - - - - 
     .body_game {
         display: flex;
@@ -89,6 +114,9 @@
     max-width:90%;
     &_question {
         font-weight:800;
+    }
+    &_expl {
+        font-weight: normal;
     }
     &_inputs {
         margin:1rem 0;

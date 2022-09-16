@@ -1,8 +1,30 @@
+<!-- ------------- S C R I P T ------------- -->
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+  import { ref, computed } from 'vue'
+  import { RouterLink,RouterView } from 'vue-router';
+
+  import {useGameStore} from '@/stores/game'
+
+  const gameStore = useGameStore()
+  gameStore.getDatasApi()
+  
+  const members = ['Pierre', 'Jean', 'Charles']
+  gameStore.addMembers(members)
+  
+  const listMembers = computed(() => { return gameStore.allJoueurs})
+  
+  const newUser = ref('')
+  
+  const addUser = () => {
+    gameStore.addAMember(newUser.value)
+  }
+
+  const parentjoueur = (value) => {
+    alert('click in joueur num ' + value)
+  }
 </script>
 
+  <!-- ------------- T E M P L A T E ------------- -->
 <template>
   <header>
     <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
@@ -20,7 +42,9 @@ import HelloWorld from './components/HelloWorld.vue'
   <RouterView />
 </template>
 
-<style scoped>
+<!-- ------------- S T Y L E ------------- -->
+
+<style scoped lang="scss">
 header {
   line-height: 1.5;
   max-height: 100vh;

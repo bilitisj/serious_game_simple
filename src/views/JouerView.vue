@@ -1,7 +1,8 @@
+<!-- ------------- T E M P L A T E ------------- -->
 <template>
   <div class="jouer">
     <h1>Jouer</h1>
-    <nav>
+    <nav class="nav_jeux">
         <RouterLink to="/qcmUnique">Qcm unique</RouterLink>
         <RouterLink to="/qcmMulti">Qcm multiple</RouterLink>
         <RouterLink to="/challenge">Challenge</RouterLink>
@@ -12,57 +13,52 @@
   </div>
 </template>
 
-<style>
+<!-- ------------- S C R I P T ------------- -->
+<script setup>
 
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
+  import {useGameStore} from '@/stores/game'
 
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
+  const gameStore = useGameStore()
+  console.log(gameStore)
 
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
 
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
+</script>
 
-nav a:first-of-type {
-  border: 0;
-}
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
+<!-- ------------- S T Y L E ------------- -->
+<style scoped lang="scss">
+    // - - - - - Paramètres P R I N C I P A L - - - - - 
+    .nav_jeux {
+        background: #f4f7f6;
+    }
+    nav {
+        width: 100%;
+        font-size: 1rem;
+        text-align: center;
+        margin-top: 2rem;
+        padding: 1rem;
+    }
 
-  .logo {
-    margin: 0 2rem 0 0;
-  }
+    nav a.router-link-exact-active {
+        color: var(--color-text);
+    }
 
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+    nav a.router-link-exact-active:hover {
+        background-color: transparent;
+    }
 
-  nav {
-    text-align: center;
-    margin-left: -1rem;
-    font-size: 1rem;
+    nav a {
+        display: inline-block;
+        padding: 0 1rem;
+        border-left: 1px solid var(--color-border);
+    }
 
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
-}
+    nav a:first-of-type {
+        border: 0;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+        margin: 1rem 8rem;
+    }
 </style>
